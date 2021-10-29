@@ -56,6 +56,26 @@ $rootUnit: 16px !default;
   margin-right: $marginX;
 }
 
+@mixin marginY($marginY: 16px){
+  margin-top: rem($marginY);
+  margin-bottom: rem($marginY);
+}
+
+@mixin marginX($marginX: 16px){
+  margin-left: rem($marginX);
+  margin-right: rem($marginX);
+}
+
+@mixin paddingY($paddingY: 16px){
+  padding-top: rem($paddingY);
+  padding-bottom: rem($paddingY);
+}
+
+@mixin paddingX($paddingX: 16px){
+  padding-left: rem($paddingX);
+  padding-right: rem($paddingX);
+}
+
 // 플렉스 박스 믹스인 ---------------------------------------------------------------- /
 @mixin flexbox($direction: row, $justify: flex-start, $items: stretch, $wrap: nowrap) {
   display: flex;
@@ -63,3 +83,36 @@ $rootUnit: 16px !default;
   justify-content: $justify;
   align-items: $items;
 }
+
+// 반응형 이미지 ------------------------------------------------------------------- /
+@mixin responsiveImg {
+  max-width: 100%;
+  height: auto;
+}
+
+// 반응형 비디오 및 SVG 요소 ---------------------------------------------------------- /
+@mixin responsiveMedia {
+  width: 100%;
+  height: 100%;
+}
+
+// 반응형 iFrame ---------------------------------------------------------------- /
+@mixin responsiveIframe($ratioX: 16, $ratioY:9)  {
+  position: relative;
+  width: 100%;
+  height: 0 !important;
+  padding-top: ($ratioY / $ratioX) * 100%;
+
+  iframe{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
