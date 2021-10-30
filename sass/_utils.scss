@@ -1,3 +1,4 @@
+@use "sass:math";
 // 미디어 쿼리 중단점 (Breakpoints) --------------------------------------------------------------- /
 $breakpoint: 950px;
 
@@ -33,7 +34,7 @@ $rootUnit: 16px !default;
 
 // px을 rem 단위로 변경하는 함수 ------------------------------------------------------- /
 @function rem($value, $base: $rootUnit){
-  @return (removeUnit($value / $base)) * 1rem;
+  @return (removeUnit(math.div($value , $base))) * 1rem;
 }
 
 // px을 em 단위로 변경하는 함수 ------------------------------------------------------- /
