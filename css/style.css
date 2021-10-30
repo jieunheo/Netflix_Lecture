@@ -46,28 +46,15 @@ a {
   align-items: center;
   border: 1px solid #c8c8c8;
 }
-.icon-global {
-  position: absolute;
-  left: 0.4375rem;
-  width: 0.625rem;
-  height: 0.625rem;
-}
-@media screen and (min-width: 950px) {
-  .icon-global {
-    left: 0.625rem;
-    width: 0.9375rem;
-    height: 0.9375rem;
-  }
-}
-
 .select-language__select {
+  -webkit-appearance: none;
   appearance: none;
-  position: relative;
-  z-index: 10;
   background-color: transparent;
   color: #c8c8c8;
   font-size: 0.75rem;
   padding: 0.25rem 1.375rem;
+  position: relative;
+  z-index: 10;
 }
 @media screen and (min-width: 950px) {
   .select-language__select {
@@ -75,17 +62,32 @@ a {
     padding: 0.5rem 2.0625rem;
   }
 }
-.icon-triangle {
+.select-language .icon-triangle, .select-language .icon-global {
   position: absolute;
-  right: 0.4375rem;
   width: 0.625rem;
   height: 0.625rem;
 }
 @media screen and (min-width: 950px) {
-  .icon-triangle {
-    right: 0.625rem;
+  .select-language .icon-triangle, .select-language .icon-global {
     width: 0.9375rem;
     height: 0.9375rem;
+  }
+}
+.icon-global {
+  left: 0.4375rem;
+}
+@media screen and (min-width: 950px) {
+  .icon-global {
+    left: 0.625rem;
+  }
+}
+
+.icon-triangle {
+  right: 0.4375rem;
+}
+@media screen and (min-width: 950px) {
+  .icon-triangle {
+    right: 0.625rem;
   }
 }
 
@@ -229,17 +231,17 @@ a {
 }
 .footer__description {
   color: #c8c8c8;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
 @media screen and (min-width: 950px) {
   .footer__description {
-    flex-direction: row;
     margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 949px) {
+  .footer__description .phonenumber {
+    display: block;
   }
 }
 @media screen and (min-width: 950px) {
@@ -249,15 +251,15 @@ a {
 }
 .footer__list {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
   color: #acacac;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: stretch;
   font-size: 0.875rem;
-  margin-top: 0.625rem;
-  margin-bottom: 0.625rem;
 }
 @media screen and (min-width: 950px) {
   .footer__list {
