@@ -61,17 +61,20 @@
   // 질문이 있으신가요?
   &__description{
     color: $gray200;
-    @include flexbox($direction: column);
+    // @include flexbox($direction: column);
     margin-bottom: rem(16px);
     font-size: rem(20px);
     @include desktop{
-      flex-direction: row;
+      // flex-direction: row;
       margin-bottom: rem(32px);
     }
   }
 
   // 문의전화 번호
   &__description .phonenumber{
+    @include mobile{
+      display: block;
+    }
     @include desktop{
       margin-left: rem(8px);
     }
@@ -80,16 +83,14 @@
   // 푸터 링크 목록
   &__list{
     list-style: none;
-    padding: 0;
+    padding-left: 0;
+    @include marginY(10px);
     color: $gray300;
     @include flexbox($wrap: wrap);
     font-size: rem(14px);
-    margin-top: rem(10px);
-    margin-bottom: rem(10px);
     @include desktop{
       font-size: rem(16px);
-      margin-top: rem(16px);
-      margin-bottom: rem(16px);
+      @include marginY;
     }
   }
 
@@ -122,7 +123,7 @@
 
   // 주소
   @at-root .address{
-    @include flexbox($direction: column);
+    @include flexbox(column);
     color: $gray400;
     font-style: normal;
     font-size: rem(14px);
