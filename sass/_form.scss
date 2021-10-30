@@ -2,43 +2,46 @@
 .select-language{
   position: relative;
   @include flexbox($items: center);
-  border: 1px solid #c8c8c8;
-
-  @at-root .icon-global{
-    position: absolute;
-    left: rem(7px);
-    width: rem(10px);
-    height: rem(10px);
-    @include desktop{
-      left: rem(10px);
-      width: rem(15px);
-      height: rem(15px);
-    }
-  }
+  border: 1px solid $gray200;
 
   &__select{
+    -webkit-appearance: none;
     appearance: none;
-    position: relative;
-    z-index: 10;
     background-color: transparent;
     color: $gray200;
     font-size: rem(12px);
     padding: rem(4px) rem(22px);
+    position: relative;
+    z-index: 10;
     @include desktop{
       font-size: rem(16px);
       padding: rem(8px) rem(33px);
     }
   }
-
-  @at-root .icon-triangle{
+  
+  %icon{
     position: absolute;
-    right: rem(7px);
     width: rem(10px);
     height: rem(10px);
     @include desktop{
-      right: rem(10px);
       width: rem(15px);
       height: rem(15px);
+    }
+  }
+
+  @at-root .icon-global{
+    @extend %icon;
+    left: rem(7px);
+    @include desktop{
+      left: rem(10px);
+    }
+  }
+
+  @at-root .icon-triangle{
+    @extend %icon;
+    right: rem(7px);
+    @include desktop{
+      right: rem(10px);
     }
   }
 }
